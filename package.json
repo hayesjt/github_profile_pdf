@@ -1,0 +1,23 @@
+{
+  "name": "github_profile_pdf",
+  "version": "1.0.0",
+  "description": "An application that takes data from any users GitHub account and makes it into a PDF showing the data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haylee430/github_profile_pdf.git"
+  },
+  "author": "Haylee Thomas-Kuhlmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haylee430/github_profile_pdf/issues"
+  },
+  "homepage": "https://github.com/haylee430/github_profile_pdf#readme",
+  "dependencies": {
+    "html-pdf": "^2.2.0",
+    "inquirer": "^7.0.0"
+  }
+}
