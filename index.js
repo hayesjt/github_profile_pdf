@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const pdf = require('html-pdf');
+const api = require('./api')
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -20,7 +21,14 @@ function promptUser() {
         message: "What color do you like?",
         choices: choices,
       },
-    ]);
+    ])
+    .then(answers => {
+      api(answers.github)
+      .then(response => {
+        console.log(response);
+      })
+    });
+
   };
 
 promptUser();
