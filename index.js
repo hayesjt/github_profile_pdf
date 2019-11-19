@@ -3,10 +3,11 @@ const fs = require("fs");
 const util = require("util");
 const pdf = require('html-pdf');
 const api = require('./api')
+const html = require('./gen_html')
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const choices = ["Black", "Sea Green","Crimson","Midnight Blue" ]
+const choices = ["Black", "Green", "Red", "Blue" ]
 
 function promptUser() {
     return inquirer.prompt([
