@@ -1,5 +1,5 @@
 
-function makeHTML(data) {
+function makeHTML(response, answers) {
     return
     `<!DOCTYPE html>
     <html lang="en">
@@ -29,16 +29,15 @@ function makeHTML(data) {
                 </div>
                 <div class="col-md-10">
                     <div class="jumbotron">
-                        <img src="images/me.jpg" alt="Profile Picture" style="border-radius: 50%;">
-                        <h1 class="display-4">Haylee Thomas-Kuhlmann</h1>
-                        <h3>GitHub Username: haylee430</h3>
+                        <img src="${response.data.avatar_url} alt="Profile Picture" style="border-radius: 50%; border: 5px solid ${answers.color};">
+                        <h1 class="display-4" style="color: ${answers.color};">${response.data.name}</h1>
+                        <h3>GitHub Username: ${response.data.login}</h3>
                         <hr class="my-4">
-                        <p>New to web development but active in a current design roll at Target. Interested in the way
-                            technology and design interact to create a powerful tool.</p>
-                        <a class="btn btn-primary btn-lg" href="https://www.google.com/maps/place/"
+                        <p>${response.data.bio}</p>
+                        <a class="btn btn-primary btn-lg" style="" href="https://www.google.com/maps/place/${response.data.location}"
                             role="button">Location</a>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">GitHub</a>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Blog</a>
+                        <a class="btn btn-primary btn-lg" style="" href="${response.data.html_url}" role="button">GitHub</a>
+                        <a class="btn btn-primary btn-lg" style="" href="${response.data.blog}" role="button">Blog</a>
                     </div>
                 </div>
                 <div class="col-md-1">
@@ -52,22 +51,22 @@ function makeHTML(data) {
                 <div class="col-md-10 text-center">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Public Repos:</h5>
+                            <h5 class="card-title" style="color: ${answers.color};>Public Repos:${response.data.public_repos}</h5>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Followers:</h5>
+                            <h5 class="card-title" style="color: ${answers.color};">Followers:${response.data.followers}</h5>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Following:</h5>
+                            <h5 class="card-title" style="color: ${answers.color};>Following:${response.data.following}</h5>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">GitHub Stars:</h5>
+                            <h5 class="card-title" style="color: ${answers.color};>GitHub Stars:${response.data.public_gists}</h5>
                         </div>
                     </div>
                 </div>
@@ -81,4 +80,4 @@ function makeHTML(data) {
     </html>`
 }
 
-module.exports = makeHTML(data)
+module.exports = makeHTML()
