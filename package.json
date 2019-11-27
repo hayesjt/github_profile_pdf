@@ -2,7 +2,7 @@
   "name": "github_profile_pdf",
   "version": "1.0.0",
   "description": "An application that takes data from any users GitHub account and makes it into a PDF showing the data.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
